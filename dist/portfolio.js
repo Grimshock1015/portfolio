@@ -86,13 +86,13 @@ window.PORTFOLIO = {
     },
     {
       id: "gamejam",
-      title: "Global Game Jam",
+      title: "Dream Detective",
       subtitle: "A branching narrative puzzle game in 48 hours.",
       category: "Games",
       tags: ["Godot", "GDScript", "JSON"],
       year: "Jan 2026",
       visual: "gamejam",
-      typeLabel: "48-hour team prototype",
+      typeLabel: "Global Game Jam 2026",
       image: "",
       imageAlt: "",
       overview: "Developed a playable 2D narrative puzzle game with a team during a 48-hour Global Game Jam. The prototype connects scripted interactions, puzzle progression, UI, and branching dialogue.",
@@ -103,7 +103,7 @@ window.PORTFOLIO = {
       ],
       resultTitle: "Prototype detail",
       learned: "The playable team prototype combines Godot interaction logic with JSON dialogue paths, allowing player selections to affect the story responses shown in the game.",
-      liveUrl: "",
+      liveUrl: "https://mambojiang.itch.io/dream-detective",
       sourceUrl: ""
     },
     {
