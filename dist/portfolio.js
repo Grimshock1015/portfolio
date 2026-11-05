@@ -71,8 +71,20 @@ window.PORTFOLIO = {
       year: "Dec 2024",
       visual: "planetze",
       typeLabel: "Android course project",
-      image: "",
-      imageAlt: "",
+      image: "./assets/planetze/eco-tracker.jpg",
+      imageAlt: "Planetze's Eco Tracker screen showing daily carbon emissions by activity category.",
+      imageOrientation: "portrait",
+      galleryLabel: "INSIDE THE APP",
+      cardImages: ["./assets/planetze/welcome.jpg", "./assets/planetze/eco-tracker.jpg", "./assets/planetze/eco-gauge.jpg"],
+      gallery: [
+        { src: "./assets/planetze/eco-balance.jpg", caption: "Eco Balance · sustainability projects", alt: "Planetze Eco Balance screen displaying a reforestation project in Kenya." },
+        { src: "./assets/planetze/eco-gauge.jpg", caption: "Eco Gauge · emissions comparison", alt: "Planetze Eco Gauge screen with local and global emissions comparisons and a daily chart." },
+        { src: "./assets/planetze/eco-tracker.jpg", caption: "Eco Tracker · daily emissions", alt: "Planetze Eco Tracker screen with a circular emissions chart for transportation, food, and shopping." },
+        { src: "./assets/planetze/transport-questionnaire.jpg", caption: "Transport questionnaire", alt: "Planetze onboarding question about weekly public transport usage, with selectable time ranges." },
+        { src: "./assets/planetze/carbon-footprint-info.jpg", caption: "Carbon footprint information", alt: "Planetze educational screen explaining carbon footprints and their connection to climate change." },
+        { src: "./assets/planetze/welcome.jpg", caption: "Welcome · login & registration", alt: "Planetze welcome screen with login and registration buttons." },
+        { src: "./assets/planetze/onboarding.jpg", caption: "Sustainability onboarding", alt: "Planetze introduction with an illustrated Earth and the message Empowering You to Live Sustainability Everyday." }
+      ],
       overview: "Developed habit-management features for Planetze, an Android carbon-tracking course project for an external company. The completed app lets users adopt sustainability habits, log activity, and find habits relevant to their activity patterns.",
       contribution: [
         "Implemented per-user habit histories in Firebase, duplicate-adoption checks, and date-based logging for calendar views.",

@@ -101,6 +101,8 @@
   };
   const visualType = project => Object.hasOwn(visuals, project.visual) ? project.visual : "superset";
   const visualHtml = (project, className = "") => {
+    const cardImages = (project.cardImages || []).map(src => safeUrl(src, true)).filter(Boolean);
+    if (!className && cardImages.length) return `<div class="project-visual portrait-project-cover" aria-hidden="true"><div class="portrait-cover-frames">${cardImages.map(src => `<img src="${escape(src)}" alt="" width="221" height="480" loading="lazy">`).join("")}</div></div>`;
     const image = safeUrl(project.image, true);
     if (image) return `<div class="project-visual visual-image ${className}"><img src="${escape(image)}" alt="${escape(project.imageAlt || `${project.title} project preview`)}" loading="lazy" width="1200" height="750"></div>`;
     return `<div class="project-visual visual-${visualType(project)} ${className}" aria-hidden="true">${visuals[visualType(project)]}</div>`;
@@ -113,7 +115,10 @@
     const cover = safeUrl(project.image, true);
     const index = Math.max(0, items.findIndex(item => item.url === cover));
     const item = items[index];
-    return `<section class="project-gallery" data-gallery-project="${escape(project.id)}" aria-label="${escape(project.title)} screenshots"><p class="eyebrow gallery-heading">INSIDE THE GAME</p><figure class="gallery-figure"><a class="gallery-fullsize" href="${escape(item.url)}" target="_blank" rel="noopener noreferrer" aria-label="Open screenshot at full size (opens in a new tab)"><img class="gallery-main-image" src="${escape(item.url)}" alt="${escape(item.alt || item.caption)}" width="794" height="446"><span class="gallery-expand" aria-hidden="true">↗</span></a><figcaption class="gallery-meta" aria-live="polite"><span class="gallery-caption">${escape(item.caption)}</span><span class="gallery-counter">${index + 1} / ${items.length}</span></figcaption></figure><div class="gallery-thumbnails" role="group" aria-label="Choose a screenshot">${items.map((image, i) => `<button type="button" class="gallery-thumbnail" data-gallery-index="${i}" aria-pressed="${i === index}" aria-label="Show screenshot ${i + 1}: ${escape(image.caption)}"><img src="${escape(image.url)}" alt="" width="794" height="446" loading="lazy"></button>`).join("")}</div></section>`;
+    const portrait = project.imageOrientation === "portrait";
+    const width = portrait ? 221 : 794;
+    const height = portrait ? 480 : 446;
+    return `<section class="project-gallery${portrait ? " gallery-portrait" : ""}" data-gallery-project="${escape(project.id)}" aria-label="${escape(project.title)} screenshots"><p class="eyebrow gallery-heading">${escape(project.galleryLabel || "INSIDE THE GAME")}</p><figure class="gallery-figure"><a class="gallery-fullsize" href="${escape(item.url)}" target="_blank" rel="noopener noreferrer" aria-label="Open screenshot at full size (opens in a new tab)"><img class="gallery-main-image" src="${escape(item.url)}" alt="${escape(item.alt || item.caption)}" width="${width}" height="${height}"><span class="gallery-expand" aria-hidden="true">↗</span></a><figcaption class="gallery-meta" aria-live="polite"><span class="gallery-caption">${escape(item.caption)}</span><span class="gallery-counter">${index + 1} / ${items.length}</span></figcaption></figure><div class="gallery-thumbnails" role="group" aria-label="Choose a screenshot">${items.map((image, i) => `<button type="button" class="gallery-thumbnail" data-gallery-index="${i}" aria-pressed="${i === index}" aria-label="Show screenshot ${i + 1}: ${escape(image.caption)}"><img src="${escape(image.url)}" alt="" width="${width}" height="${height}" loading="lazy"></button>`).join("")}</div></section>`;
   };
   $("#dialog-content").addEventListener("click", event => {
     const button = event.target.closest("[data-gallery-index]");

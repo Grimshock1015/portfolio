@@ -83,3 +83,5 @@ package.json                Preview and check commands; no dependencies
 ```
 
 GitHub Pages serves static files. Contact actions use your configured email address; no backend or form-service account is required.
+
+For portrait mobile screenshots, set `imageOrientation` to `"portrait"` and optionally set `galleryLabel` (for example, `"INSIDE THE APP"`). A `cardImages` array can show several screenshots together on the project card.
