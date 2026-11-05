@@ -106,6 +106,33 @@
     return `<div class="project-visual visual-${visualType(project)} ${className}" aria-hidden="true">${visuals[visualType(project)]}</div>`;
   };
   const tagsHtml = project => `<div class="project-tags">${(project.tags || []).map(tag => `<span>${escape(tag)}</span>`).join("")}</div>`;
+  const galleryItems = project => (project.gallery || []).map(item => ({ ...item, url: safeUrl(item.src, true) })).filter(item => item.url);
+  const galleryHtml = project => {
+    const items = galleryItems(project);
+    if (!items.length) return visualHtml(project, "dialog-hero");
+    const cover = safeUrl(project.image, true);
+    const index = Math.max(0, items.findIndex(item => item.url === cover));
+    const item = items[index];
+    return `<section class="project-gallery" data-gallery-project="${escape(project.id)}" aria-label="${escape(project.title)} screenshots"><p class="eyebrow gallery-heading">INSIDE THE GAME</p><figure class="gallery-figure"><a class="gallery-fullsize" href="${escape(item.url)}" target="_blank" rel="noopener noreferrer" aria-label="Open screenshot at full size (opens in a new tab)"><img class="gallery-main-image" src="${escape(item.url)}" alt="${escape(item.alt || item.caption)}" width="794" height="446"><span class="gallery-expand" aria-hidden="true">↗</span></a><figcaption class="gallery-meta" aria-live="polite"><span class="gallery-caption">${escape(item.caption)}</span><span class="gallery-counter">${index + 1} / ${items.length}</span></figcaption></figure><div class="gallery-thumbnails" role="group" aria-label="Choose a screenshot">${items.map((image, i) => `<button type="button" class="gallery-thumbnail" data-gallery-index="${i}" aria-pressed="${i === index}" aria-label="Show screenshot ${i + 1}: ${escape(image.caption)}"><img src="${escape(image.url)}" alt="" width="794" height="446" loading="lazy"></button>`).join("")}</div></section>`;
+  };
+  $("#dialog-content").addEventListener("click", event => {
+    const button = event.target.closest("[data-gallery-index]");
+    if (!button) return;
+    const gallery = button.closest("[data-gallery-project]");
+    const project = projects.find(item => item.id === gallery.dataset.galleryProject);
+    if (!project) return;
+    const items = galleryItems(project);
+    const index = Number(button.dataset.galleryIndex);
+    const item = items[index];
+    if (!item) return;
+    const image = $(".gallery-main-image", gallery);
+    image.src = item.url;
+    image.alt = item.alt || item.caption;
+    $(".gallery-fullsize", gallery).href = item.url;
+    $(".gallery-caption", gallery).textContent = item.caption;
+    $(".gallery-counter", gallery).textContent = `${index + 1} / ${items.length}`;
+    $$(".gallery-thumbnail", gallery).forEach(thumbnail => thumbnail.setAttribute("aria-pressed", String(thumbnail === button)));
+  });
   let currentFilter = "All work";
   const categories = ["All work", ...new Set(projects.map(project => project.category).filter(Boolean))];
   $(".filters").innerHTML = categories.map((category, index) => `<button class="filter${index === 0 ? " active" : ""}" data-filter="${escape(category)}" aria-pressed="${index === 0}">${escape(category)}${index === 0 ? ` <span>${projects.length}</span>` : ""}</button>`).join("");
@@ -132,7 +159,7 @@
     const project = projects.find(item => item.id === button.dataset.project);
     if (!project) return;
     const links = [["Visit project", project.liveUrl], ["View source", project.sourceUrl]].filter(([, url]) => safeUrl(url));
-    $("#dialog-content").innerHTML = `${visualHtml(project, "dialog-hero")}<div class="dialog-body"><p class="eyebrow">${escape(project.typeLabel || project.category)} / ${escape(project.year || "SELECTED PROJECT")}</p><h2 id="dialog-title">${escape(project.title)}</h2><p class="dialog-subtitle">${escape(project.subtitle)}</p>${tagsHtml(project)}<h3>The idea</h3><p>${escape(project.overview)}</p><h3>${profile.sampleMode ? "Your contribution" : "My contribution"}</h3><ul>${(project.contribution || []).map(item => `<li>${escape(item)}</li>`).join("")}</ul><h3>${escape(project.resultTitle || "What I learned")}</h3><p>${escape(project.learned)}</p>${links.length ? `<div class="dialog-actions">${links.map(([label, url]) => `<a class="text-link" href="${escape(safeUrl(url))}" target="_blank" rel="noopener noreferrer">${label} <span aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a>`).join("")}</div>` : ""}${profile.sampleMode ? '<div class="dialog-sample-note">ILLUSTRATIVE PROJECT · This concept is sample content. Your real project story, screenshots, and links can take its place.</div>' : ""}</div>`;
+    $("#dialog-content").innerHTML = `${galleryHtml(project)}<div class="dialog-body"><p class="eyebrow">${escape(project.typeLabel || project.category)} / ${escape(project.year || "SELECTED PROJECT")}</p><h2 id="dialog-title">${escape(project.title)}</h2><p class="dialog-subtitle">${escape(project.subtitle)}</p>${tagsHtml(project)}<h3>The idea</h3><p>${escape(project.overview)}</p><h3>${profile.sampleMode ? "Your contribution" : "My contribution"}</h3><ul>${(project.contribution || []).map(item => `<li>${escape(item)}</li>`).join("")}</ul><h3>${escape(project.resultTitle || "What I learned")}</h3><p>${escape(project.learned)}</p>${links.length ? `<div class="dialog-actions">${links.map(([label, url]) => `<a class="text-link" href="${escape(safeUrl(url))}" target="_blank" rel="noopener noreferrer">${label} <span aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a>`).join("")}</div>` : ""}${profile.sampleMode ? '<div class="dialog-sample-note">ILLUSTRATIVE PROJECT · This concept is sample content. Your real project story, screenshots, and links can take its place.</div>' : ""}</div>`;
     openDialog($("#project-dialog"));
   });
 

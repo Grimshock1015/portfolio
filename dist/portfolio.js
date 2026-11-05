@@ -93,8 +93,15 @@ window.PORTFOLIO = {
       year: "Jan 2026",
       visual: "gamejam",
       typeLabel: "Global Game Jam 2026",
-      image: "",
-      imageAlt: "",
+      image: "./assets/dream-detective/dream-investigation.png",
+      imageAlt: "Dream Detective gameplay showing a colourful dream scene with characters, clues, and dialogue.",
+      gallery: [
+        { src: "./assets/dream-detective/dialogue.png", caption: "Dialogue & character interaction", alt: "Dream Detective dialogue scene with an investigator, a seated character, and a hand-drawn room." },
+        { src: "./assets/dream-detective/character-notebook.png", caption: "Character notebook", alt: "An open investigation notebook with character portraits and case folders." },
+        { src: "./assets/dream-detective/dream-investigation.png", caption: "Dream investigation", alt: "A colourful office dream scene with several characters, a cat, and an investigator's dialogue." },
+        { src: "./assets/dream-detective/clue-notebook.png", caption: "Clue notebook & deduction", alt: "An open notebook of illustrated clues and a clue-combination area against a bright dream background." },
+        { src: "./assets/dream-detective/kitchen-exploration.png", caption: "Kitchen exploration", alt: "A hand-drawn pink kitchen scene with a character, a cat, and the investigation interface." }
+      ],
       overview: "Developed a playable 2D narrative puzzle game with a team during a 48-hour Global Game Jam. The prototype connects scripted interactions, puzzle progression, UI, and branching dialogue.",
       contribution: [
         "Implemented Area2D triggers, scripted interactions, UI elements, and puzzle logic in GDScript.",
