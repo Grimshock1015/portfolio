@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Tommy Wang — University of Toronto software developer. AI, Android, machine learning, and interactive projects. View selected work, experience, and résumé.">
+  <meta name="theme-color" content="#f6f7f2">
+  <meta property="og:title" content="Tommy Wang — Software Developer">
+  <meta property="og:description" content="AI, Android, machine learning, and interactive projects. Explore Tommy Wang’s portfolio and résumé.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://grimshock1015.github.io/portfolio/">
+  <link rel="canonical" href="https://grimshock1015.github.io/portfolio/">
+  <title>Tommy Wang — Software Developer</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./portfolio.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand" aria-label="Portfolio home"><span class="brand-mark" data-initials>TW</span><span data-name>Tommy Wang</span><span class="brand-dot">.</span></a>
+      <nav class="desktop-nav" aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="#experience">Experience</a></nav>
+      <div class="nav-actions"><button class="theme-toggle icon-button" aria-label="Switch to dark theme" title="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.5 8.5 0 1 0 20.5 14Z"/></svg></button><a class="nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a><button class="menu-toggle icon-button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation"><span></span><span></span></button></div>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="#work">Work</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <main id="main">
+    <section class="hero container" id="home" aria-labelledby="hero-heading">
+      <div class="hero-copy">
+        <div class="eyebrow hero-eyebrow"><span class="small-line"></span> IDEAS INTO EXPERIENCES</div>
+        <p class="intro-name">Hi, I’m <span data-name>Tommy Wang</span> <span class="wave" aria-hidden="true">✳</span></p>
+        <h1 id="hero-heading">Thoughtful code.<br>Useful <em>things.</em></h1>
+        <p class="hero-description" data-intro>I build practical software across AI, Android, and data. Explore my projects, technical contributions, and experience.</p>
+        <div class="hero-buttons"><a href="#work" class="button button-dark">Explore my work <span aria-hidden="true">↘</span></a><a href="./assets/tommy-wang-resume.pdf" class="text-link" data-resume-link target="_blank" rel="noopener noreferrer">View résumé <span aria-hidden="true">↗</span></a></div>
+        <div class="hero-location"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M15.5 8c0 4-5.5 9-5.5 9S4.5 12 4.5 8a5.5 5.5 0 0 1 11 0Z"/><circle cx="10" cy="8" r="1.8"/></svg><span data-location>Toronto, Ontario</span><span class="location-divider"></span><span data-role>Software developer · U of T</span></div>
+      </div>
+      <div class="hero-visual" role="img" aria-label="Illustration of a thoughtful digital workspace with code, a design canvas, and a project checklist">
+        <div class="visual-grid"></div><div class="orbit-ring ring-one"></div><div class="orbit-ring ring-two"></div><span class="visual-spark spark-one">✳</span><span class="visual-spark spark-two">+</span>
+        <div class="code-window"><div class="window-top"><span></span><span></span><span></span><small>hello-world.js</small></div><div class="code-lines"><span class="code-comment">// a little curiosity goes a long way</span><br><span class="code-purple">const</span> developer = {<br>&nbsp; name: <span class="code-sage">"<span data-name>Tommy Wang</span>"</span>,<br>&nbsp; loves: [<span class="code-sage">"building"</span>, <span class="code-sage">"learning"</span>],<br>&nbsp; mindset: <span class="code-sage">"make it meaningful"</span><br>};<br><br><span class="code-purple">while</span> (curious) { <span class="code-yellow">create</span>(); }</div></div>
+        <div class="canvas-window"><span class="canvas-label">A LITTLE FORM, A LITTLE FUNCTION</span><div class="sculpture"><span></span><span></span><span></span></div><div class="canvas-bottom"><span>Made with intention.</span><span>↗</span></div></div>
+        <div class="floating-note"><span class="note-icon">✓</span><div>Good ideas deserve<br><strong>great execution.</strong></div><span class="note-star">✦</span></div>
+        <span class="visual-caption">ALWAYS A WORK IN PROGRESS, IN THE BEST WAY.</span>
+      </div>
+    </section>
+
+    <div class="principles-strip"><div class="container"><span>CURIOUS MIND.</span><span class="strip-star" aria-hidden="true">✳</span><span>THOUGHTFUL CRAFT.</span><span class="strip-star" aria-hidden="true">✳</span><span>MEANINGFUL WORK.</span><span class="strip-star last-star" aria-hidden="true">✳</span></div></div>
+
+    <section class="work-section container section" id="work" aria-labelledby="work-heading">
+      <div class="section-heading"><div><p class="eyebrow"><span class="section-number">01 /</span> SELECTED WORK</p><h2 id="work-heading">Ideas explored.<br>Software <em>built.</em></h2></div><p class="section-description">AI, mobile, data, and interactive experiences. <br>The problems, the work, and my contributions.</p></div>
+      <div class="work-toolbar"><div class="filters" role="group" aria-label="Filter projects"><button class="filter active" data-filter="All work" aria-pressed="true">All work <span id="project-total">4</span></button><button class="filter" data-filter="Web apps" aria-pressed="false">Web apps</button><button class="filter" data-filter="Experiments" aria-pressed="false">Experiments</button></div><span class="sample-label" data-sample-note>ILLUSTRATIVE PROJECTS</span></div>
+      <div class="projects-grid" id="projects"></div><p class="sr-only" id="filter-status" role="status"></p>
+      <div class="work-footer"><span>There’s always something new on the workbench.</span><a href="#contact" class="text-link" id="more-work-link">Have something in mind? <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section class="about-section section" id="about" aria-labelledby="about-heading"><div class="container about-grid">
+      <div class="about-art"><div class="profile-card"><div class="profile-card-top"><span>THE PERSON BEHIND THE PIXELS</span><span>↗</span></div><div class="monogram-wrap"><div class="monogram" data-initials>TW</div><span class="monogram-star">✳</span></div><div class="profile-card-bottom"><div><strong data-name>Tommy Wang</strong><span data-role>Software developer · U of T</span></div><span class="profile-smile" aria-hidden="true">☺</span></div></div><div class="art-caption"><span>01 — A LITTLE INTRODUCTION</span><span>HELLO THERE.</span></div></div>
+      <div class="about-copy"><p class="eyebrow"><span class="section-number">02 /</span> BEYOND THE CODE</p><h2 id="about-heading">A builder’s mind.<br>A <em>curious spirit.</em></h2><div id="about-paragraphs"></div><div class="interests" id="interests"></div><a id="resume-link" class="text-link resume-link" data-resume-link download hidden>Download résumé <span aria-hidden="true">↗</span></a></div>
+    </div></section>
+
+    <section class="skills-section container section" aria-labelledby="skills-heading"><div class="skills-heading"><div><p class="eyebrow">THE TOOLKIT</p><h2 id="skills-heading">What I build <em>with.</em></h2></div><p>A growing set of tools. <br>A constant desire to learn.</p></div><div class="skills-grid" id="skills"></div></section>
+
+    <section class="experience-section container section" id="experience" aria-labelledby="experience-heading"><div class="experience-intro"><p class="eyebrow"><span class="section-number">03 /</span> THE JOURNEY SO FAR</p><h2 id="experience-heading">Learning. <br>Building. <br><em>Moving forward.</em></h2><p>Every experience adds <br>a new perspective.</p></div><div class="journey"><div id="experience-list"></div><div class="education-block"><p class="eyebrow">EDUCATION</p><h3 id="education-degree"></h3><p id="education-institution"></p><span id="education-period" class="period"></span></div></div></section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-heading"><div class="container"><div class="contact-top"><p class="eyebrow"><span class="section-number">04 /</span> NEXT CHAPTER</p><span class="contact-spark" aria-hidden="true">✳</span></div><h2 id="contact-heading">Good work starts<br>with a <em>conversation.</em></h2><div class="contact-bottom"><p>Have a role, a project, or an interesting idea?<br>I’d love to hear about it.</p><button class="contact-button" id="email-action">Say hello <span aria-hidden="true">↗</span></button></div><div class="contact-links"><span id="contact-email">Your email goes here</span><button class="copy-email" id="copy-email" aria-label="Copy email address" hidden>Copy email <span aria-hidden="true">⧉</span></button><div class="socials" id="socials"></div></div></div></section>
+  </main>
+  <footer class="site-footer container"><a class="brand footer-brand" href="#home"><span class="brand-mark" data-initials>TW</span><span data-name>Tommy Wang</span><span class="brand-dot">.</span></a><span>Made with curiosity & care. <span id="copyright-year"></span></span><a href="#home" class="back-top">Back to top ↑</a></footer>
+  <div class="template-note" id="template-note" hidden><span class="template-dot"></span> Sample portfolio · Ready for your story <button aria-label="Dismiss sample content note" id="dismiss-note">×</button></div>
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title"><button class="dialog-close icon-button" aria-label="Close project details">×</button><div id="dialog-content"></div></dialog>
+  <dialog class="notice-dialog" id="notice-dialog" aria-labelledby="notice-title"><button class="dialog-close icon-button" aria-label="Close message">×</button><span class="notice-icon" aria-hidden="true">↗</span><p class="eyebrow">A PLACE FOR YOUR NEXT CHAPTER</p><h2 id="notice-title">Let’s make this <em>yours.</em></h2><p>This is a sample portfolio. Your contact details will appear here once your résumé and profile information have been added.</p><button class="button button-dark notice-dismiss">Got it <span aria-hidden="true">✓</span></button></dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <noscript><div class="noscript-note">Please enable JavaScript to view the portfolio’s projects, experience, and contact details.</div></noscript>
+</body>
+</html>
