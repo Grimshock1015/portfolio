@@ -100,8 +100,15 @@ window.PORTFOLIO = {
       tags: ["React", "Fastify", "Firebase", "IndexedDB"],
       year: "Mar–Apr 2026",
       typeLabel: "Full-stack team project",
-      image: "./assets/rafflesgo/illustration.svg",
-      imageAlt: "Project illustration of a survey route and a draft, review, submit workflow; this is not an application screenshot or a real survey location.",
+      image: "./assets/rafflesgo/dashboard.jpg",
+      imageAlt: "RafflesGo's actual dashboard interface in a local preview with fictional demo data, showing survey progress, attendance, and encounter-rate charts.",
+      galleryLabel: "INSIDE RAFFLESGO · LOCAL DEMO",
+      gallery: [
+        { src: "./assets/rafflesgo/dashboard.jpg", caption: "Dashboard · fictional demo data", alt: "Original RafflesGo dashboard showing a demo volunteer's survey progress and attendance charts; figures are fictional examples." },
+        { src: "./assets/rafflesgo/saved-drafts.jpg", caption: "Saved sighting drafts · fictional demo data", alt: "RafflesGo's saved-drafts page showing two fictional observations persisted through the app's local IndexedDB service." },
+        { src: "./assets/rafflesgo/observation-form.jpg", caption: "Observation form · reopened demo draft", alt: "The original sighting form reopened from a fictional draft, with observation status, survey walk, date, time, and media controls." },
+        { src: "./assets/rafflesgo/tutorial.jpg", caption: "Volunteer onboarding · local preview", alt: "RafflesGo's original Welcome to RafflesGo tutorial dialog over the sighting form in a local demo preview." }
+      ],
       overview: "A team-built conservation volunteer platform for organizing Raffles’ banded langur survey walks and recording observations. The application supports walk registration, location and media details for sightings, and volunteer and administrator workflows. Its React frontend connects to a Fastify API with Firebase Authentication and Firestore.",
       contribution: [
         "Implemented the initial sighting-submission flow across the frontend page, API routes, schemas, and backend service.",
@@ -109,7 +116,7 @@ window.PORTFOLIO = {
         "Built role-specific first-login tutorials and a button to reopen them, with mocked Firebase and API tests for the onboarding flow."
       ],
       resultTitle: "Full-stack workflow",
-      learned: "Worked across typed API boundaries, browser persistence, and onboarding in a team application. The project generates its OpenAPI specification from backend schemas and uses a generated TypeScript client in the frontend. The contributions above are reflected in my March–April 2026 commits; the portfolio artwork is an illustration.",
+      learned: "Worked across typed API boundaries, browser persistence, and onboarding in a team application. The project generates its OpenAPI specification from backend schemas and uses a generated TypeScript client in the frontend. The contributions above are reflected in my March–April 2026 commits. Gallery screenshots show the original interface with fictional demo data.",
       liveUrl: "",
       sourceUrl: "https://github.com/Grimshock1015/rafflesgo-group-10-public"
     },
