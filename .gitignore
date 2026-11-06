@@ -5,3 +5,10 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+.dev.vars
+.wrangler/
+.codex/
+.agents/
+.openai/
+AGENTS.md
+CODEX.md

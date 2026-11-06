@@ -1,4 +1,4 @@
-/* Profile and project content, based on Tommy's résumé. */
+/* Profile and project content, based on Tommy's résumé and project repositories. */
 window.PORTFOLIO = {
   sampleMode: false,
   name: "Tommy Wang",
@@ -40,6 +40,58 @@ window.PORTFOLIO = {
     ]
   },
   projects: [
+    {
+      id: "folio",
+      title: "Folio",
+      subtitle: "Document answers you can trace to the source.",
+      category: "Applied AI",
+      tags: ["TypeScript", "RAG", "GPT-6.1 Sol", "SQLite"],
+      year: "Nov 2026",
+      typeLabel: "Document assistant",
+      image: "./assets/folio/document-answer.jpg",
+      imageAlt: "Folio answering a question about sample API documentation with numbered citations and a source evidence panel.",
+      galleryLabel: "INSIDE FOLIO",
+      gallery: [
+        { src: "./assets/folio/document-answer.jpg", caption: "Source search · cited passages and document versions", alt: "Folio displaying its source-search fallback with cited fictional Atlas API passages, document versions, and source evidence." }
+      ],
+      overview: "A document assistant for finding answers across PDF, Markdown, and text files. Folio retrieves relevant passages before answering, so readers can inspect the document, version, page, and section behind a citation. It supports local source search and optional GPT-6.1 Sol generation through AI Space.",
+      contribution: [
+        "Implemented document import, text chunking, persistent storage, and BM25-style keyword retrieval with document and version filters.",
+        "Connected retrieved passages to cited answers and an evidence panel, with an extractive fallback when AI generation is unavailable and an insufficient-evidence response when no usable passages match.",
+        "Added a repeatable retrieval benchmark with 10 labeled sample cases to check source matching and version selection."
+      ],
+      resultTitle: "Engineering focus",
+      learned: "Built a complete retrieval-to-answer workflow with React, TypeScript, Cloudflare Workers, D1/SQLite, and PDF.js. The current retriever uses lexical ranking; the small sample benchmark is a regression check, rather than a claim of accuracy on arbitrary documents.",
+      liveUrl: "",
+      sourceUrl: "https://github.com/Grimshock1015/folio-document-assistant"
+    },
+    {
+      id: "pulse",
+      title: "Pulse",
+      subtitle: "Follow an API from the first failure to recovery.",
+      category: "Engineering",
+      tags: ["React", "TypeScript", "Cloudflare Workers", "SQLite"],
+      year: "Nov 2026",
+      typeLabel: "Local API monitor",
+      image: "./assets/pulse/dashboard.jpg",
+      imageAlt: "Pulse's local monitoring dashboard showing observed HTTP failures, a response-time chart, and recent check history.",
+      galleryLabel: "INSIDE PULSE",
+      gallery: [
+        { src: "./assets/pulse/dashboard.jpg", caption: "Service dashboard · measured checks and response times", alt: "Pulse walkthrough dashboard with HTTP outcomes, a sample success rate, and a response-time history chart." },
+        { src: "./assets/pulse/incidents.jpg", caption: "Incident timeline · failure evidence and recovery", alt: "Pulse showing an open incident and a recovered incident after a controlled local walkthrough." }
+      ],
+      overview: "A local API monitoring application with manual and scheduled HTTP checks, response-time history, and incident tracking. Three consecutive failed checks open an incident; a successful check records recovery. The app runs on your computer, and its source repository is private.",
+      contribution: [
+        "Built endpoint management, persisted check history, and a React dashboard backed by a Cloudflare Worker and local D1/SQLite.",
+        "Implemented browser-independent scheduling, database leases to coordinate overlapping checks, and atomic incident transitions with retained failure evidence.",
+        "Added a reproducible six-step walkthrough covering healthy responses, latency, repeated HTTP 503 failures, and recovery, plus CI and local HTTP smoke checks."
+      ],
+      resultTitle: "Verified local release",
+      learned: "Released v0.7.0 with 139 tests and 56 HTTP smoke scenarios. Dashboard percentages describe the retained check samples, rather than continuous uptime. The screenshots show measured results from the controlled walkthrough; optional AI summaries remain future work.",
+      liveUrl: "",
+      sourceUrl: "https://github.com/Grimshock1015/pulse-uptime-monitor",
+      sourceLabel: "Private repository"
+    },
     {
       id: "superset",
       title: "Apache Superset",

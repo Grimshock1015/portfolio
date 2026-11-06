@@ -163,7 +163,7 @@
     if (!button) return;
     const project = projects.find(item => item.id === button.dataset.project);
     if (!project) return;
-    const links = [["Visit project", project.liveUrl], ["View source", project.sourceUrl]].filter(([, url]) => safeUrl(url));
+    const links = [["Visit project", project.liveUrl], [project.sourceLabel || "View source", project.sourceUrl]].filter(([, url]) => safeUrl(url));
     $("#dialog-content").innerHTML = `${galleryHtml(project)}<div class="dialog-body"><p class="eyebrow">${escape(project.typeLabel || project.category)} / ${escape(project.year || "SELECTED PROJECT")}</p><h2 id="dialog-title">${escape(project.title)}</h2><p class="dialog-subtitle">${escape(project.subtitle)}</p>${tagsHtml(project)}<h3>The idea</h3><p>${escape(project.overview)}</p><h3>${profile.sampleMode ? "Your contribution" : "My contribution"}</h3><ul>${(project.contribution || []).map(item => `<li>${escape(item)}</li>`).join("")}</ul><h3>${escape(project.resultTitle || "What I learned")}</h3><p>${escape(project.learned)}</p>${links.length ? `<div class="dialog-actions">${links.map(([label, url]) => `<a class="text-link" href="${escape(safeUrl(url))}" target="_blank" rel="noopener noreferrer">${label} <span aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a>`).join("")}</div>` : ""}${profile.sampleMode ? '<div class="dialog-sample-note">ILLUSTRATIVE PROJECT · This concept is sample content. Your real project story, screenshots, and links can take its place.</div>' : ""}</div>`;
     openDialog($("#project-dialog"));
   });
