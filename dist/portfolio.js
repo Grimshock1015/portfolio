@@ -41,6 +41,32 @@ window.PORTFOLIO = {
   },
   projects: [
     {
+      id: "reelmatch",
+      title: "ReelMatch",
+      subtitle: "Movie recommendations with a reason behind every match.",
+      category: "Applied AI",
+      tags: ["Python", "FastAPI", "React", "Collaborative filtering"],
+      year: "Nov 2026",
+      typeLabel: "Explainable recommendation engine",
+      image: "./assets/reelmatch/recommendations.png",
+      imageAlt: "ReelMatch recommending movies from a two-film taste profile, with similarity explanations, star ratings, and discovery controls.",
+      galleryLabel: "INSIDE REELMATCH",
+      gallery: [
+        { src: "./assets/reelmatch/recommendations.png", caption: "Personalized discovery · ratings, explanations, and variety controls", alt: "ReelMatch showing personalized movie suggestions based on Alien and Toy Story ratings, with a saved taste profile and adjustable discovery settings." },
+        { src: "./assets/reelmatch/benchmark.png", caption: "Chronological benchmark · measured ranking quality and catalog coverage", alt: "ReelMatch's benchmark dashboard comparing popularity, collaborative filtering, and hybrid recommendations on 300 held-out users." }
+      ],
+      overview: "An explainable movie discovery app built on MovieLens 1M. Users rate a few films, receive recommendations that exclude movies they have already rated, and inspect the preferences behind each match. The app supports genre filters, four ranking methods, browser-local taste profiles, and a discovery slider for novelty and variety.",
+      contribution: [
+        "Implemented item-based collaborative filtering with overlap shrinkage and a hybrid ranker combining rating patterns, genre similarity, and a weighted popularity prior.",
+        "Built a React and FastAPI workflow with persistent browser-local ratings, similarity-based explanations, genre filters, and adjustable discovery controls.",
+        "Added repeatable training, JSON/NPZ model persistence, 26 automated tests, and a global chronological evaluation that fits on earlier ratings, tunes discovery on validation data, and scores a held-out test sample."
+      ],
+      resultTitle: "Measured recommendation quality",
+      learned: "On a deterministic sample of 300 eligible held-out users, collaborative filtering achieved 0.218 NDCG@10 versus 0.120 for the popularity baseline. The hybrid model reached 0.211 NDCG@10 with broader catalog coverage: 6.04% versus 5.38% for collaborative filtering. These offline results use historical ratings and do not establish live user satisfaction.",
+      liveUrl: "",
+      sourceUrl: "https://github.com/Grimshock1015/reelmatch-recommender"
+    },
+    {
       id: "folio",
       title: "Folio",
       subtitle: "Document answers you can trace to the source.",
