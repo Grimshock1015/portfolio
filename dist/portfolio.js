@@ -93,6 +93,27 @@ window.PORTFOLIO = {
       sourceLabel: "Private repository"
     },
     {
+      id: "rafflesgo",
+      title: "RafflesGo",
+      subtitle: "Coordinate conservation walks and preserve field observations.",
+      category: "Engineering",
+      tags: ["React", "Fastify", "Firebase", "IndexedDB"],
+      year: "Mar–Apr 2026",
+      typeLabel: "Full-stack team project",
+      image: "./assets/rafflesgo/illustration.svg",
+      imageAlt: "Project illustration of a survey route and a draft, review, submit workflow; this is not an application screenshot or a real survey location.",
+      overview: "A team-built conservation volunteer platform for organizing Raffles’ banded langur survey walks and recording observations. The application supports walk registration, location and media details for sightings, and volunteer and administrator workflows. Its React frontend connects to a Fastify API with Firebase Authentication and Firestore.",
+      contribution: [
+        "Implemented the initial sighting-submission flow across the frontend page, API routes, schemas, and backend service.",
+        "Added IndexedDB storage for local sighting drafts, integrated draft management into the interface, and wrote draft-storage tests. Users can reopen saved drafts for submission.",
+        "Built role-specific first-login tutorials and a button to reopen them, with mocked Firebase and API tests for the onboarding flow."
+      ],
+      resultTitle: "Full-stack workflow",
+      learned: "Worked across typed API boundaries, browser persistence, and onboarding in a team application. The project generates its OpenAPI specification from backend schemas and uses a generated TypeScript client in the frontend. The contributions above are reflected in my March–April 2026 commits; the portfolio artwork is an illustration.",
+      liveUrl: "",
+      sourceUrl: "https://github.com/Grimshock1015/rafflesgo-group-10-public"
+    },
+    {
       id: "superset",
       title: "Apache Superset",
       subtitle: "A proposal for direct Google Sheets exports.",
@@ -176,6 +197,28 @@ window.PORTFOLIO = {
       learned: "The playable team prototype combines Godot interaction logic with JSON dialogue paths, allowing player selections to affect the story responses shown in the game.",
       liveUrl: "https://mambojiang.itch.io/dream-detective",
       sourceUrl: ""
+    },
+    {
+      id: "doodle-jump",
+      title: "Doodle Jump",
+      subtitle: "A platform-jumping game built in MIPS assembly.",
+      category: "Games",
+      tags: ["MIPS Assembly", "Bitmap Graphics", "Memory-mapped I/O"],
+      year: "Winter 2025",
+      typeLabel: "CSCB58 course project",
+      image: "./assets/doodle-jump/illustration.svg",
+      imageAlt: "Project illustration of a pixel character and platforms, with labels for MIPS assembly and bitmap graphics; this is not a gameplay screenshot.",
+      overview: "A scrolling platform game implemented in MIPS assembly for CSCB58. The game combines gravity and platform collision with randomized and moving platforms, score tracking, and animated coin, slow-time, and double-jump pickups.",
+      contribution: [
+        "Implemented bitmap drawing through direct memory writes and keyboard input through memory-mapped I/O.",
+        "Built the timed update and render loop, platform collision, scrolling camera, and moving-platform behavior.",
+        "Added animated pickups and explicit game states for score, temporary effects, double jumping, falling, and restarting."
+      ],
+      resultTitle: "Low-level engineering",
+      learned: "Connected rendering, input, and gameplay state through MIPS registers and memory. Controls in the source use A/D to move, W for an available double jump, R to restart, and Q to quit. The repository includes the assembly source and a recorded course demonstration; the portfolio artwork is an illustration.",
+      liveUrl: "https://youtu.be/W7YNHFM5e6s",
+      liveLabel: "Watch demo",
+      sourceUrl: "https://github.com/Grimshock1015/Doodle_jump"
     },
     {
       id: "safety",

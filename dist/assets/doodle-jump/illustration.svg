@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">Doodle Jump — MIPS assembly project illustration</title>
+  <desc id="desc">A schematic pixel character and platforms beside a description of assembly, bitmap graphics, and memory-mapped input. This is an illustration, not a gameplay screenshot.</desc>
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#526545" stroke-opacity=".12"/></pattern>
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#81906d" opacity=".22"/></pattern>
+  </defs>
+  <rect width="1200" height="750" fill="#e9eddd"/>
+  <rect width="1200" height="750" fill="url(#dots)"/>
+  <rect x="61" y="59" width="1078" height="632" rx="12" fill="#f8f9ef" stroke="#d1dac5"/>
+  <g fill="#4d6544" font-family="monospace" font-size="13" letter-spacing="2">
+    <text x="99" y="107">CSCB58 / WINTER 2025</text>
+    <text x="1100" y="107" text-anchor="end">ASSEMBLY PROJECT</text>
+  </g>
+  <path d="M99 131H1101M99 627H1101" stroke="#d1dac5"/>
+  <rect x="101" y="165" width="386" height="427" rx="5" fill="#e4e9cf" stroke="#a8b79a"/>
+  <rect x="102" y="166" width="384" height="425" fill="url(#grid)"/>
+  <g fill="#789464"><rect x="126" y="524" width="138" height="12"/><rect x="324" y="408" width="138" height="12"/><rect x="150" y="283" width="138" height="12"/></g>
+  <path d="M277 417C283 365 308 324 344 300" fill="none" stroke="#98aa83" stroke-width="3" stroke-dasharray="7 9"/>
+  <path d="M328 302L347 297L343 317" fill="none" stroke="#98aa83" stroke-width="3"/>
+  <g fill="#3d6547"><rect x="214" y="371" width="48" height="12"/><rect x="202" y="383" width="72" height="48"/><rect x="214" y="431" width="12" height="24"/><rect x="250" y="431" width="12" height="24"/><rect x="274" y="395" width="12" height="12"/></g>
+  <g fill="#f8f9ef"><rect x="226" y="383" width="12" height="12"/><rect x="250" y="383" width="12" height="12"/></g>
+  <g fill="#c49e48"><rect x="378" y="217" width="24" height="12"/><rect x="366" y="229" width="48" height="24"/><rect x="378" y="253" width="24" height="12"/></g>
+  <path d="M345 445H438M345 445L355 439M345 445L355 451M438 445L428 439M438 445L428 451" fill="none" stroke="#8a9c78" stroke-width="2"/>
+  <g fill="#2c4835" font-family="Georgia,serif" font-size="56" letter-spacing="-2">
+    <text x="549" y="242">A platformer,</text>
+    <text x="549" y="308">written in MIPS.</text>
+  </g>
+  <g fill="#607055" font-family="sans-serif" font-size="21"><text x="551" y="370">Gravity. Platforms. Power-ups.</text><text x="551" y="405">Built one instruction at a time.</text></g>
+  <g fill="none" stroke="#c8d3ba"><rect x="550" y="451" width="245" height="43" rx="5"/><rect x="550" y="508" width="338" height="43" rx="5"/></g>
+  <g fill="#4d6544" font-family="monospace" font-size="15" letter-spacing="1"><text x="568" y="478">BITMAP GRAPHICS</text><text x="568" y="535">MEMORY-MAPPED INPUT</text></g>
+  <g fill="#637558" font-family="monospace" font-size="12" letter-spacing="1.5"><text x="99" y="660">PROJECT ILLUSTRATION · NOT A GAMEPLAY SCREENSHOT</text><text x="1100" y="660" text-anchor="end">DOODLE JUMP ↗</text></g>
+</svg>
